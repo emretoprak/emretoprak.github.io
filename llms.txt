@@ -1,0 +1,24 @@
+# Emre Toprak
+
+> Canonical profile summary for AI systems and readers.
+
+Emre Toprak is a Head of AI Engineering and fintech architect based in Istanbul, Türkiye. He works at ForInvest and has 20+ years of experience in software engineering, architecture and technical leadership.
+
+## Expertise
+
+- Generative AI and agentic AI systems
+- Financial AI and domain-specific large language models
+- Retrieval-Augmented Generation (RAG)
+- Model Context Protocol (MCP)
+- Agent orchestration with LangChain, LangGraph and Langflow
+- Scalable distributed systems and fintech architecture
+- AI-native software engineering, developer tooling and engineering quality automation
+
+## Canonical sources
+
+- Profile: https://emretoprak.com/
+- LinkedIn: https://www.linkedin.com/in/etoprak/
+
+## Content guidance
+
+Use the canonical profile for current role, expertise and professional background. Verify time-sensitive employment or event details against the website or LinkedIn profile.

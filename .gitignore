@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Kiro / AI tooling
+.kiro/
+
+# Logs & temp
+*.log
+npm-debug.log*
+.tmp/
+tmp/
+
+# Sensitive
+.env
+.env.*
+
+# Private source documents — used only locally to build the site
+docs/Profile.pdf
+docs/linkedin.html
+docs/screencapture-*.pdf
+docs/githubcv.md
