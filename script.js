@@ -180,7 +180,7 @@
   };
   const requestedLanguage = new URLSearchParams(window.location.search).get('lang'); const savedLanguage = localStorage.getItem('site-language');
   document.querySelectorAll('[data-language]').forEach((button) => button.addEventListener('click', () => applyLocale(button.dataset.language)));
-  applyLocale(requestedLanguage === 'tr' || requestedLanguage === 'en' ? requestedLanguage : (savedLanguage === 'tr' ? savedLanguage : 'en'));
+  if (root.dataset.staticLocale !== 'true') applyLocale(requestedLanguage === 'tr' || requestedLanguage === 'en' ? requestedLanguage : (savedLanguage === 'tr' ? savedLanguage : 'en'));
 
   const lightbox = document.querySelector('[data-lightbox]'); const lightboxImage = lightbox.querySelector('[data-lightbox-image]'); const lightboxCaption = lightbox.querySelector('[data-lightbox-caption]');
   const closeLightbox = () => { lightbox.classList.remove('is-open'); lightbox.setAttribute('aria-hidden', 'true'); document.body.classList.remove('lightbox-open'); };

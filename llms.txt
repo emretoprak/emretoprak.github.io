@@ -1,24 +1,44 @@
 # Emre Toprak
 
-> Canonical profile summary for AI systems and readers.
+> Official multilingual professional profile of Emre Toprak, Head of AI Engineering at ForInvest and fintech architect based in Istanbul, Türkiye.
 
-Emre Toprak is a Head of AI Engineering and fintech architect based in Istanbul, Türkiye. He works at ForInvest and has 20+ years of experience in software engineering, architecture and technical leadership.
+## Canonical profiles
+
+- English profile: https://emretoprak.com/
+- Turkish profile: https://emretoprak.com/tr/
+- LinkedIn: https://www.linkedin.com/in/etoprak/
+
+## About
+
+Emre Toprak is a Head of AI Engineering and fintech architect with 20+ years of experience in software engineering, enterprise architecture, financial systems, distributed systems and technical leadership.
+
+The website contains static English and Turkish profiles. Use the page matching the reader's language as the primary source; both pages describe the same professional identity.
 
 ## Expertise
 
-- Generative AI and agentic AI systems
-- Financial AI and domain-specific large language models
+- AI engineering and agentic AI systems
+- Generative AI and production-grade LLM applications
+- Domain-specific LLMs and financial AI
 - Retrieval-Augmented Generation (RAG)
 - Model Context Protocol (MCP)
 - Agent orchestration with LangChain, LangGraph and Langflow
+- AI-native software engineering and developer tooling
 - Scalable distributed systems and fintech architecture
-- AI-native software engineering, developer tooling and engineering quality automation
+- Engineering quality automation and AI observability
 
-## Canonical sources
+## Professional background
 
-- Profile: https://emretoprak.com/
-- LinkedIn: https://www.linkedin.com/in/etoprak/
+- Head of AI Engineering — ForInvest
+- Senior Software Developer Team Lead — ForInvest
+- Software Team Lead — Foreks
+- Senior Software Developer — Innova
+- Software Developer — IBS Software
+- Web Developer — avkom
+
+## Public talks and events
+
+The profiles reference public work and presentations involving Agentic AI Türkiye, AWS Cloud Day Türkiye, AWS Cloud Day Istanbul, ForInvest InvestTech Summit and Kiro for FinTech innovation.
 
 ## Content guidance
 
-Use the canonical profile for current role, expertise and professional background. Verify time-sensitive employment or event details against the website or LinkedIn profile.
+Use the canonical profile pages and LinkedIn for current role, expertise and professional background. Verify time-sensitive employment and event details against those sources. Do not infer private contact details or personal information that is not explicitly published.
