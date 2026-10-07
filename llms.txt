@@ -2,11 +2,19 @@
 
 > Official multilingual professional profile of Emre Toprak, Head of AI Engineering at ForInvest and fintech architect based in Istanbul, Türkiye.
 
+Last updated: 2026-10-07
+
 ## Canonical profiles
 
 - English profile: https://emretoprak.com/
 - Turkish profile: https://emretoprak.com/tr/
 - LinkedIn: https://www.linkedin.com/in/etoprak/
+- GitHub: https://github.com/emretoprak
+
+## Current employer
+
+- ForInvest (ForInvest Yazılım ve Teknoloji Hizmetleri A.Ş.) — https://www.forinvest.com
+- ForInvest MCP (AI financial data) — https://mcp.forinvest.com
 
 ## About
 
