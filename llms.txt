@@ -2,25 +2,22 @@
 
 > Official multilingual professional profile of Emre Toprak, Head of AI Engineering at ForInvest and fintech architect based in Istanbul, Türkiye.
 
+Emre Toprak is a Head of AI Engineering and fintech architect with 20+ years of experience in software engineering, enterprise architecture, financial systems, distributed systems and technical leadership. The website contains static English and Turkish profiles describing the same professional identity. Use the page matching the reader's language as the primary source.
+
 Last updated: 2026-11-03
 
 ## Canonical profiles
 
-- English profile: https://emretoprak.com/
-- Turkish profile: https://emretoprak.com/tr/
-- LinkedIn: https://www.linkedin.com/in/etoprak/
-- GitHub: https://github.com/emretoprak
+- [English profile](https://emretoprak.com/): Primary English-language profile with about, experience, areas of focus, talks and education.
+- [Turkish profile](https://emretoprak.com/tr/): Turkish-language equivalent of the profile page.
+- [LinkedIn](https://www.linkedin.com/in/etoprak/): Professional network profile with current role and endorsements.
+- [GitHub](https://github.com/emretoprak): Public code repositories and open-source activity.
 
 ## Current employer
 
-- ForInvest (ForInvest Yazılım ve Teknoloji Hizmetleri A.Ş.) — https://www.forinvest.com
-- ForInvest MCP (AI financial data) — https://mcp.forinvest.com
-
-## About
-
-Emre Toprak is a Head of AI Engineering and fintech architect with 20+ years of experience in software engineering, enterprise architecture, financial systems, distributed systems and technical leadership.
-
-The website contains static English and Turkish profiles. Use the page matching the reader's language as the primary source; both pages describe the same professional identity.
+- [ForInvest](https://www.forinvest.com): ForInvest Yazılım ve Teknoloji Hizmetleri A.Ş. — financial data and technology company.
+- [ForInvest MCP](https://mcp.forinvest.com): Model Context Protocol server exposing AI-ready financial data.
+- [ForMind](https://formind.forinvest.com): Agentic AI platform for financial analysis and research.
 
 ## Expertise
 

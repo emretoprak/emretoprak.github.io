@@ -12,7 +12,7 @@
       description: 'Emre Toprak — Head of AI Engineering, fintech architect and specialist in Generative AI, agentic systems, RAG, MCP and scalable distributed systems.',
       nav: ['Home', 'About', 'Experience', 'Areas of focus', 'Events', 'Education & skills', 'LinkedIn & website'],
       side: ['Visible skills', 'Languages'],
-      close: 'Close profile panel', openProfile: 'Open profile', openMenu: 'Open menu',
+      close: 'Close profile panel', openProfile: 'ET — Open profile', openMenu: 'Open menu',
       hero: ['Read profile', 'Profile summary', 'Years in software engineering', 'Roles held', 'Talks & events', 'Degrees earned'],
       aboutHeading: ['01 / About', 'Enterprise software, fintech ', 'and AI.'],
       about: '<p class="art-lead">With 20+ years of experience in software engineering, architecture, and technical leadership, I build scalable systems at the intersection of enterprise software, fintech, and AI.</p><p>Today, as <b>Head of AI Engineering at ForInvest</b>, I focus on turning Generative AI from experimentation into reliable, production-grade engineering capabilities.</p><p>My background spans high-performance financial systems, distributed architectures, backend platforms, desktop, mobile, and web engineering. This breadth allows me to approach AI not simply as an application layer, but as part of the broader software engineering lifecycle — from architecture and development to testing, security, deployment, and operations.</p><p>My current focus is AI-native software engineering: designing agentic systems, RAG architectures, Model Context Protocol (MCP) integrations, and AI-powered developer tools that improve engineering productivity and R&amp;D efficiency.</p><p>I also work on domain-specific LLM development, including fine-tuning models for financial use cases. I focus on adapting foundation models to financial terminology, workflows, and domain knowledge while evaluating model accuracy, reliability, and production readiness.</p><p>I am particularly interested in building AI agents that become reliable participants in the software development lifecycle — understanding requirements, analyzing codebases, generating and validating changes, improving test coverage, and supporting engineering teams.</p><p>As a technical leader, I enjoy simplifying complex engineering environments, connecting multidisciplinary teams, and establishing pragmatic standards that enable teams to move faster without compromising reliability, security, or scalability.</p>',
@@ -26,7 +26,7 @@
       description: 'Emre Toprak — Yapay Zeka Mühendisliği Lideri, fintech mimarı; Üretken Yapay Zeka, otonom ajan sistemleri, RAG, MCP ve ölçeklenebilir dağıtık sistemler uzmanı.',
       nav: ['Ana sayfa', 'Hakkımda', 'Deneyim', 'Odak alanları', 'Etkinlikler', 'Eğitim ve yetkinlikler', 'LinkedIn ve web sitesi'],
       side: ['Öne çıkan yetkinlikler', 'Diller'],
-      close: 'Profil panelini kapat', openProfile: 'Profili aç', openMenu: 'Menüyü aç',
+      close: 'Profil panelini kapat', openProfile: 'ET — Profili aç', openMenu: 'Menüyü aç',
       hero: ['Profili oku', 'Profil özeti', 'Yıllık yazılım mühendisliği deneyimi', 'Görev sayısı', 'Konuşma ve etkinlik', 'Eğitim derecesi'],
       aboutHeading: ['01 / Hakkımda', 'Kurumsal yazılım, fintech ', 've yapay zeka.'],
       about: '<p class="art-lead">Yazılım mühendisliği, mimari ve teknik liderlikte 20 yılı aşan deneyimimle kurumsal yazılım, fintech ve yapay zekanın kesiştiği noktada ölçeklenebilir sistemler kuruyorum.</p><p>Bugün <b>ForInvest\'te Yapay Zeka Mühendisliği Lideri</b> olarak Üretken Yapay Zeka\'yı deneysel bir alandan çıkarıp güvenilir, üretime hazır mühendislik yetkinliklerine dönüştürmeye odaklanıyorum.</p><p>Geçmişim yüksek performanslı finansal sistemleri, dağıtık mimarileri, backend platformlarını, masaüstü, mobil ve web mühendisliğini kapsıyor. Bu geniş perspektif, yapay zekayı yalnızca bir uygulama katmanı olarak değil; mimariden geliştirmeye, testten güvenliğe, dağıtımdan operasyona uzanan yazılım yaşam döngüsünün doğal bir parçası olarak ele almamı sağlıyor.</p><p>Şu anki odağım AI-native yazılım mühendisliği: otonom ajan sistemleri, RAG mimarileri, Model Context Protocol (MCP) entegrasyonları ve mühendislik verimliliği ile Ar-Ge etkinliğini artıran yapay zeka destekli geliştirici araçları tasarlamak.</p><p>Bunun yanında finansal kullanım senaryoları için alana özgü LLM geliştirme ve ince ayar çalışmaları yürütüyorum; temel modelleri finans terminolojisine, iş akışlarına ve alan bilgisine uyarlarken doğruluk, güvenilirlik ve üretime hazırlık kriterlerini değerlendiriyorum.</p><p>Özellikle yapay zeka ajanlarının yazılım geliştirme süreçlerinin güvenilir bir parçasına dönüşmesiyle ilgileniyorum: gereksinimleri anlayan, kod tabanlarını çözümleyen, değişiklik üretip doğrulayan, test kapsamını artıran ve ekiplere gerçek anlamda destek olan ajanlar.</p><p>Teknik lider olarak karmaşık mühendislik ortamlarını sadeleştirmekten, farklı disiplinlerdeki ekipleri buluşturmaktan ve güvenilirlik, güvenlik ya da ölçeklenebilirlikten taviz vermeden ekiplerin daha hızlı ilerlemesini sağlayan pratik standartlar kurmaktan keyif alıyorum.</p>',
@@ -147,10 +147,21 @@
   }
   syncThemeUi();
 
-  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';  const resetScrollPositions = () => { if (profileScroll) profileScroll.scrollTo({ top: 0, left: 0, behavior: 'auto' }); if (contentScroll && !window.location.hash) contentScroll.scrollTo({ top: 0, left: 0, behavior: 'auto' }); };
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  /* Scroll resets are batched into a single animation frame so the browser
+     performs one layout pass instead of a forced synchronous reflow per call. */
+  let scrollResetQueued = false;
+  const resetScrollPositions = () => {
+    if (scrollResetQueued) return;
+    scrollResetQueued = true;
+    requestAnimationFrame(() => {
+      scrollResetQueued = false;
+      if (profileScroll) profileScroll.scrollTop = 0;
+      if (contentScroll && !window.location.hash) contentScroll.scrollTop = 0;
+    });
+  };
   resetScrollPositions();
-  window.addEventListener('DOMContentLoaded', resetScrollPositions);
-  window.addEventListener('load', () => { resetScrollPositions(); window.setTimeout(resetScrollPositions, 120); });
+  window.addEventListener('load', resetScrollPositions);
   document.querySelectorAll('#year, #footer-year').forEach((node) => { node.textContent = year; });
 
   const closePanels = () => { info.classList.remove('open'); curtain.classList.remove('open'); };
@@ -176,7 +187,14 @@
     document.querySelector('meta[property="og:description"]').setAttribute('content', locale.description);
     document.querySelector('meta[name="twitter:title"]').setAttribute('content', locale.title);
     document.querySelector('meta[name="twitter:description"]').setAttribute('content', locale.description);
-    document.querySelectorAll('[data-language]').forEach((button) => { const active = button.dataset.language === language; button.classList.toggle('is-active', active); button.setAttribute('aria-pressed', String(active)); });
+    document.querySelectorAll('[data-language]').forEach((button) => {
+      const active = button.dataset.language === language;
+      button.classList.toggle('is-active', active);
+      /* aria-pressed is not allowed on role=link; aria-current is the correct
+         state indicator for a language navigation link. */
+      if (active) button.setAttribute('aria-current', 'page');
+      else button.removeAttribute('aria-current');
+    });
     document.querySelectorAll('.art-lang-toggle').forEach((toggle) => toggle.setAttribute('data-active', language));
     const formindBullet = document.querySelector('.art-bullet-formind');
     if (formindBullet) formindBullet.innerHTML = language === 'tr'
