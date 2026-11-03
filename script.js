@@ -76,6 +76,7 @@
     'Led a cloud-native migration from monolith and legacy applications to Java and Node.js backend microservices.': 'Monolitik ve eski uygulamalardan Java ve Node.js backend mikroservislerine bulut-yerel geçişe liderlik ettim.',
     'Consolidated multi-server structures into single-server topologies for infrastructure cost and resource optimization.': 'Altyapı maliyeti ve kaynak optimizasyonu için çok sunuculu yapıları tek sunuculu topolojilerde birleştirdim.',
     'Led the React and Vue UI/UX rewrite of core data products.': 'Temel veri ürünlerinin React ve Vue ile UI/UX yeniden yazımına liderlik ettim.',
+    'Built algorithmic trading systems powered by machine learning, using TensorFlow to train market prediction models and backtest trading strategies against historical data.': 'TensorFlow ile piyasa tahmin modelleri eğitip işlem stratejilerini geçmiş veriler üzerinde geriye dönük test eden makine öğrenmesi destekli algoritmik alım-satım sistemleri geliştirdim.',
     'Developed enterprise banking and corporate payment systems focused on automated collection, reconciliation and settlement engines.': 'Otomatik tahsilat, mutabakat ve takas motorlarına odaklanan kurumsal bankacılık ve şirket ödeme sistemleri geliştirdim.',
     'Built E-Invoice compliance and ERP synchronization integrations.': 'E-Fatura uyumluluğu ve ERP senkronizasyonu entegrasyonları geliştirdim.',
     'Implemented backend business logic with .NET, MVC and NHibernate ORM.': '.NET, MVC ve NHibernate ORM ile backend iş mantığı geliştirdim.',
