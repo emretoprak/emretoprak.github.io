@@ -107,8 +107,47 @@
     nodes.forEach((textNode) => { const value = textNode.nodeValue; const trimmed = value.trim(); if (dictionary[trimmed]) textNode.nodeValue = value.replace(trimmed, dictionary[trimmed]); });
   };
 
-  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  const resetScrollPositions = () => { if (profileScroll) profileScroll.scrollTo({ top: 0, left: 0, behavior: 'auto' }); if (contentScroll && !window.location.hash) contentScroll.scrollTo({ top: 0, left: 0, behavior: 'auto' }); };
+  /* Theme (light / dark) */
+  const themeMeta = document.querySelectorAll('meta[name="theme-color"]');
+  const themeButtons = document.querySelectorAll('[data-theme-toggle]');
+  const themeLabels = {
+    en: { toDark: 'Switch to dark theme', toLight: 'Switch to light theme' },
+    tr: { toDark: 'Koyu temaya geç', toLight: 'Açık temaya geç' }
+  };
+  const currentTheme = () => (root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+  const syncThemeUi = () => {
+    const theme = currentTheme();
+    const isDark = theme === 'dark';
+    const language = root.dataset.siteLanguage === 'tr' ? 'tr' : 'en';
+    themeButtons.forEach((button) => {
+      button.setAttribute('aria-pressed', String(isDark));
+      button.setAttribute('aria-label', isDark ? themeLabels[language].toLight : themeLabels[language].toDark);
+      button.setAttribute('title', isDark ? themeLabels[language].toLight : themeLabels[language].toDark);
+    });
+    themeMeta.forEach((meta) => {
+      const isDarkMeta = meta.getAttribute('media') === '(prefers-color-scheme: dark)';
+      meta.setAttribute('content', isDarkMeta ? '#0a0c11' : '#f4f2ee');
+    });
+  };
+  const applyTheme = (theme, persist) => {
+    root.setAttribute('data-theme', theme);
+    if (persist) { try { localStorage.setItem('site-theme', theme); } catch (error) { /* storage unavailable */ } }
+    syncThemeUi();
+  };
+  themeButtons.forEach((button) => button.addEventListener('click', () => applyTheme(currentTheme() === 'dark' ? 'light' : 'dark', true)));
+  if (window.matchMedia) {
+    const schemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const onSchemeChange = (event) => {
+      let stored = null;
+      try { stored = localStorage.getItem('site-theme'); } catch (error) { stored = null; }
+      if (stored !== 'light' && stored !== 'dark') applyTheme(event.matches ? 'dark' : 'light', false);
+    };
+    if (schemeQuery.addEventListener) schemeQuery.addEventListener('change', onSchemeChange);
+    else if (schemeQuery.addListener) schemeQuery.addListener(onSchemeChange);
+  }
+  syncThemeUi();
+
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';  const resetScrollPositions = () => { if (profileScroll) profileScroll.scrollTo({ top: 0, left: 0, behavior: 'auto' }); if (contentScroll && !window.location.hash) contentScroll.scrollTo({ top: 0, left: 0, behavior: 'auto' }); };
   resetScrollPositions();
   window.addEventListener('DOMContentLoaded', resetScrollPositions);
   window.addEventListener('load', () => { resetScrollPositions(); window.setTimeout(resetScrollPositions, 120); });
@@ -178,6 +217,7 @@
     structuredData.textContent = JSON.stringify(data);
     document.querySelector('[data-meta-locale]').setAttribute('content', language === 'tr' ? 'tr_TR' : 'en_US');
     localStorage.setItem('site-language', language);
+    syncThemeUi();
   };
   const requestedLanguage = new URLSearchParams(window.location.search).get('lang'); const savedLanguage = localStorage.getItem('site-language');
   document.querySelectorAll('[data-language]').forEach((button) => button.addEventListener('click', () => applyLocale(button.dataset.language)));
