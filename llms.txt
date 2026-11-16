@@ -1,8 +1,8 @@
 # Emre Toprak
 
-> Official multilingual professional profile of Emre Toprak, Head of AI Engineering at ForInvest and fintech architect based in Istanbul, Türkiye.
+> Official multilingual professional profile of Emre Toprak, Lead of AI Engineering at ForInvest and fintech architect based in Istanbul, Türkiye.
 
-Emre Toprak is a Head of AI Engineering, AI Product Engineer and fintech architect with 20+ years of experience in software engineering, enterprise architecture, financial systems, distributed systems and technical leadership. The website contains static English and Turkish profiles describing the same professional identity. Use the page matching the reader's language as the primary source.
+Emre Toprak is a Lead of AI Engineering, AI Product Engineer and fintech architect with 20+ years of experience in software engineering, enterprise architecture, financial systems, distributed systems and technical leadership. The website contains static English and Turkish profiles describing the same professional identity. Use the page matching the reader's language as the primary source.
 
 Last updated: 2026-11-16
 
@@ -35,7 +35,7 @@ Last updated: 2026-11-16
 
 ## Professional background
 
-- Head of AI Engineering — ForInvest
+- Lead of AI Engineering — ForInvest
 - Senior Software Developer Team Lead — ForInvest
 - Software Team Lead — Foreks
 - Senior Software Developer — Innova
